@@ -17,6 +17,7 @@ export interface LayoutResult {
   priceAxisWidth:  number
   timeAxisHeight:  number
   leftPadding:     number
+  topPadding:      number
   separatorHeight: number
   totalWidth:      number
   totalHeight:     number
@@ -34,8 +35,8 @@ export function computeLayout(
   const separatorHeight = LW_THEME.pane.separatorHeight
 
   const chartAreaWidth  = width  - leftPadding - priceAxisWidth
-  const chartAreaHeight = height - timeAxisHeight
-                        - separatorHeight * panes.length
+  const chartAreaHeight = height - topPadding - timeAxisHeight
+                        - separatorHeight * (panes.length - 1)
 
   const bounds: PaneBounds[] = []
   let y = topPadding
@@ -56,6 +57,7 @@ export function computeLayout(
     priceAxisWidth,
     timeAxisHeight,
     leftPadding,
+    topPadding,
     separatorHeight,
     totalWidth:  width,
     totalHeight: height,

@@ -15,8 +15,20 @@ describe('computeLayout', () => {
       { heightRatio: 0.25 },
     ])
     const totalPaneH = layout.panes.reduce((s, p) => s + p.height, 0)
-    const chartH = layout.totalHeight - layout.timeAxisHeight - layout.panes.length * layout.separatorHeight
-    expect(totalPaneH).toBeCloseTo(chartH, 0)
+    // panes fill: totalHeight - topPadding - timeAxisHeight - separators between panes
+    const expectedH = layout.totalHeight - layout.topPadding - layout.timeAxisHeight
+                    - (layout.panes.length - 1) * layout.separatorHeight
+    expect(totalPaneH).toBeCloseTo(expectedH, 0)
+  })
+
+  it('panes do not overflow canvas height', () => {
+    const layout = computeLayout(800, 400, [
+      { heightRatio: 0.75 },
+      { heightRatio: 0.25 },
+    ])
+    const lastPane = layout.panes[layout.panes.length - 1]
+    const bottom = lastPane.y + lastPane.height + layout.timeAxisHeight
+    expect(bottom).toBeLessThanOrEqual(400)
   })
 
   it('pane x starts after left padding', () => {
