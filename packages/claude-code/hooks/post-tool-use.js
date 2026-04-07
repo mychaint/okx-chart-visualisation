@@ -2,6 +2,17 @@
 // PostToolUse hook for Claude Code
 // Receives JSON via stdin, writes JSON via stdout
 
+import { fileURLToPath } from 'url'
+import { dirname, join } from 'path'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname  = dirname(__filename)
+
+// Resolve @chart-viz/core via CLAUDE_PLUGIN_ROOT (set by Claude Code plugin system)
+// or fall back to relative path for local development
+const pluginRoot = process.env.CLAUDE_PLUGIN_ROOT ?? join(__dirname, '../../..')
+const coreEntry  = new URL(`file://${pluginRoot}/packages/core/dist/index.js`)
+
 const chunks = []
 process.stdin.resume()
 process.stdin.on('data', d => chunks.push(d))
@@ -12,7 +23,7 @@ process.stdin.on('end', async () => {
   // Strip MCP server prefix: "mcp__okx-trade-mcp__market_get_candles" → "market_get_candles"
   const toolName = event.tool_name?.replace(/^mcp__[^_]+__/, '') ?? ''
 
-  const { renderChart, TOOL_CHART_MAP } = await import('@chart-viz/core')
+  const { renderChart, TOOL_CHART_MAP } = await import(coreEntry)
 
   const chartType = TOOL_CHART_MAP[toolName]
   if (!chartType) {

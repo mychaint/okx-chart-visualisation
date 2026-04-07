@@ -1,0 +1,18 @@
+{
+  "name": "okx-chart-visualisation",
+  "description": "Trading chart visualisation plugin for OKX agent-trade-kit",
+  "owner": {
+    "name": "chart-visualisation"
+  },
+  "plugins": [
+    {
+      "name": "chart-visualisation",
+      "description": "Automatically render professional trading charts from OKX market data tool results and inject them as image attachments in conversation",
+      "version": "0.1.0",
+      "source": "./",
+      "author": {
+        "name": "chart-visualisation"
+      }
+    }
+  ]
+}
