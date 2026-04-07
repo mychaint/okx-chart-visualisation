@@ -11,5 +11,6 @@
     "rootDir": "src",
     "esModuleInterop": true,
     "skipLibCheck": true
-  }
+  },
+  "include": []
 }
