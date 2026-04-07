@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/mychaint/okx-chart-visualisation/actions/workflows/ci.yml/badge.svg)](https://github.com/mychaint/okx-chart-visualisation/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Node.js ≥ 18](https://img.shields.io/badge/node-%3E%3D18-brightgreen)](package.json)
+[![Node.js ≥ 20](https://img.shields.io/badge/node-%3E%3D20-brightgreen)](package.json)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![pnpm](https://img.shields.io/badge/pnpm-workspace-orange?logo=pnpm&logoColor=white)](https://pnpm.io/)
 

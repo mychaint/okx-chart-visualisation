@@ -4,4 +4,5 @@ dist/
 !packages/core/dist/
 *.tsbuildinfo
 .DS_Store
-docs
+docs/superpowers/
+!docs/INSTALL.md

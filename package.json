@@ -8,5 +8,5 @@
     "test": "pnpm -r test",
     "dev": "pnpm -r --parallel dev"
   },
-  "engines": { "node": ">=18" }
+  "engines": { "node": ">=20" }
 }
