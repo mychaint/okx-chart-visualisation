@@ -1,0 +1,14 @@
+{
+  "name": "@chart-viz/openclaw",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@chart-viz/core": "workspace:*"
+  },
+  "devDependencies": {
+    "vitest": "^4.1.3"
+  }
+}

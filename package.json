@@ -1,0 +1,12 @@
+{
+  "name": "chart-visualisation",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "dev": "pnpm -r --parallel dev"
+  },
+  "engines": { "node": ">=18" }
+}
