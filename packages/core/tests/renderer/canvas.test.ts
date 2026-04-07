@@ -12,3 +12,25 @@ describe('LW_THEME', () => {
     expect(LW_THEME.background).toBe('#FFFFFF')
   })
 })
+
+import { createChartCanvas } from '../../src/renderer/canvas.js'
+import { isValidPng, getPngDimensions } from '../helpers.js'
+
+describe('createChartCanvas', () => {
+  it('encodes to valid PNG buffer', async () => {
+    const { ctx, encode } = createChartCanvas(200, 100)
+    ctx.fillStyle = '#FF0000'
+    ctx.fillRect(0, 0, 200, 100)
+    const buf = await encode()
+    expect(buf).toBeInstanceOf(Buffer)
+    expect(isValidPng(buf)).toBe(true)
+  })
+
+  it('PNG dimensions match requested size', async () => {
+    const { encode } = createChartCanvas(300, 150)
+    const buf = await encode()
+    const dims = getPngDimensions(buf)
+    expect(dims.width).toBe(300)
+    expect(dims.height).toBe(150)
+  })
+})
