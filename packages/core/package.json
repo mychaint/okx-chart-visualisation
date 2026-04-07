@@ -19,6 +19,7 @@
     "@napi-rs/canvas": "0.1.97"
   },
   "devDependencies": {
+    "@types/node": "^25.5.2",
     "typescript": "^5.7.0",
     "vitest": "^4.1.3"
   }
