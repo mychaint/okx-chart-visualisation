@@ -1,3 +1,5 @@
 node_modules/
 dist/
+# Commit core dist so hook scripts can import @chart-viz/core without a build step
+!packages/core/dist/
 *.tsbuildinfo
