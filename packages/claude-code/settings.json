@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "mcp__okx-trade-mcp__(market_get_candles|market_get_index_candles|market_get_indicator|market_get_open_interest|market_get_funding_rate|market_get_orderbook|market_get_trades|market_get_ticker|market_get_tickers|account_get_positions)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node REPLACE_WITH_ABSOLUTE_PATH/packages/claude-code/hooks/post-tool-use.js"
+          }
+        ]
+      }
+    ]
+  }
+}
