@@ -1,5 +1,11 @@
 # okx-chart-visualisation
 
+[![CI](https://github.com/mychaint/okx-chart-visualisation/actions/workflows/ci.yml/badge.svg)](https://github.com/mychaint/okx-chart-visualisation/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Node.js ≥ 18](https://img.shields.io/badge/node-%3E%3D18-brightgreen)](package.json)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![pnpm](https://img.shields.io/badge/pnpm-workspace-orange?logo=pnpm&logoColor=white)](https://pnpm.io/)
+
 A Claude Code plugin that intercepts [OKX agent-trade-kit](https://github.com/okx/agent-trade-kit) market tool results via PostToolUse hooks and automatically renders professional trading charts as PNG image attachments in conversation.
 
 Charts replicate the visual style of [TradingView lightweight-charts 5.x](https://github.com/tradingview/lightweight-charts) and are rendered server-side using [@napi-rs/canvas](https://github.com/Brooooooklyn/canvas) — no browser required.
