@@ -13,6 +13,5 @@
     "charts",
     "kline",
     "agent-trade-kit"
-  ],
-  "hooks": ".claude-plugin/hooks.json"
+  ]
 }
